@@ -1,0 +1,230 @@
+/* Cyberpunk / Dark Neon Theme */
+:root {
+    --bg-color: #050505;
+    --card-bg: rgba(20, 20, 20, 0.7); /* Darker Glass */
+    --text-color: #e0e0e0;
+    --accent-color: #00f2ff; /* Cyan Neon */
+    --accent-secondary: #ff0055; /* Pink Neon */
+    --border-glow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(0, 242, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 85, 0.1) 0%, transparent 20%);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Dark Glass Card */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8); /* Deep Shadow */
+    width: 95%;
+    max-width: 1200px;
+    animation: slideIn 0.8s ease-out;
+}
+
+/* Neon Title */
+h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--accent-color), #fff, var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+/* Inputs - Dark & Glowing */
+.form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.form-control:focus {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-color);
+    color: #fff;
+    box-shadow: var(--border-glow);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+label {
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+    display: block; /* Fix alignment */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#source {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.3s;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#source:focus {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+    outline: none;
+}
+
+/* Neon Button */
+.btn-glow {
+    background: linear-gradient(90deg, var(--accent-color), #0077ff);
+    border: none;
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+    outline: none !important;
+}
+
+.btn-glow:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(0, 242, 255, 0.8);
+    background: linear-gradient(90deg, #fff, var(--accent-color));
+}
+
+.btn-glow:focus, .btn-glow:active {
+    outline: none !important;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.8);
+    transform: scale(0.98);
+}
+
+.btn-glow:disabled {
+    background: #333;
+    color: #666;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Result Box */
+.result-box {
+    display: none;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--accent-secondary);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.2);
+    animation: fadeIn 0.5s ease;
+    overflow-x: auto; /* Mobile scroll fix */
+}
+
+/* Table Fixes */
+.result-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+.result-box th, .result-box td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    color: #fff; /* Text visible */
+}
+
+.result-box th {
+    background-color: rgba(0, 242, 255, 0.1);
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-box tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .result-box table {
+        min-width: 600px;
+    }
+}
+
+
+/* Autofill Background Fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1a1a1a inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Global Dark Override  */
+input, select, textarea {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Global Focus Override */
+input:focus, select:focus, textarea:focus {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    color: white !important;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.5) !important;
+    outline: none !important;
+}
